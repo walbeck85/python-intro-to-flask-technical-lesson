@@ -76,9 +76,7 @@ For the purposes of this lab, this argument will always be __name__, which refer
 
 #### Step 3: Building a Route
 
-When clients send requests to our application's server, they are forwarded to our Flask application instance. This instance will receive requests for many different resources, located at different Uniform
-<br />
-Resource Locations (URLs). To map these URLs to Python functions, we need to define routes.
+When clients send requests to our application's server, they are forwarded to our Flask application instance. This instance will receive requests for many different resources, located at different Uniform Resource Locations (URLs). To map these URLs to Python functions, we need to define routes.
 <br />
 Routing is the association of URLs and the code that should execute when a request comes in for that URL. Routing isn't just a Python concept- JavaScript, Java, Ruby, and even newer languages like Rust and Go use routes to direct requests to the appropriate backend code.
 
