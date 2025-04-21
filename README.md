@@ -9,8 +9,9 @@ You are working for a social media company. As a part of that company they want 
 ### Developer Tasks
 
 * Initialize flask
-* Build ‘/’ route
-* Build ‘/’ username routeFrame the lesson by using problem-solving with the established process.
+* Build ```‘/’``` route
+* Build ```‘/’``` username route
+* Frame the lesson by using problem-solving with the established process.
 
 ## Tools & Resources
 
@@ -41,14 +42,14 @@ You are working for a social media company. As a part of that company they want 
 
 * Developer tasks
   * Initialize flask
-  * Build ‘/’ route
-  * Build ‘/’ username route
+  * Build ```‘/’``` route
+  * Build ```‘/’``` username route
 
 ### Task 2: Determine the Design
 
 Determine Routes
-* /
-* /<username>
+* ```/```
+* ```/<username>```
 
 ### Task 3: Develop, Test, and Refine the Code 
 
@@ -62,7 +63,7 @@ git checkout -b flask_routes
 
 Double check that you have run your install and shell command. When initializing flask ensure it is imported so we can use the Flask class.
 <br />
-All code changes will happen in server/app.py
+All code changes will happen in ```server/app.py```
 
 ```python
 from flask import Flask
@@ -72,7 +73,7 @@ app = Flask(__name__)
 
 The Flask class constructor only requires the name of the primary module or package to be interpreted as the application. Flask uses this to figure out where the application is and where its important files will be. As some of these will not be .py files and might not have any .py files in their directory, Flask needs to set up an application structure that allows it to see everything.
 <br />
-For the purposes of this lab, this argument will always be __name__, which refers to the name of the current module.
+For the purposes of this lab, this argument will always be ```__name__```, which refers to the name of the current module.
 
 #### Step 3: Building a Route
 
@@ -90,16 +91,15 @@ def index():
     return '<h1>Welcome to my page!</h1>'
 ```
 
-The easiest way to define routes with Flask is through use of the @app.route decorator:
+The easiest way to define routes with Flask is through use of the ```@app.route``` decorator:
 <br />
-Remember that decorators are functions that take functions as arguments and return them decorated with new features. @app.route registers the index() function with the Flask application instance app. The @app.route() decorator is an instance method that modifies app, creating a rule that requests for the base URL (/) should show our index: a page with a header that says "Welcome to my app!" 
+Remember that decorators are functions that take functions as arguments and return them decorated with new features. ```@app.route``` registers the ```index()``` function with the Flask application instance app. The @app.route() decorator is an instance method that modifies app, creating a rule that requests for the base URL (/) should show our index: a page with a header that says "Welcome to my app!" 
 
 #### Step 4: Variable Routes
 
 Navigate to your favorite social media site and take a look at the URL. The base will represent the index or homepage for the application.
 <br />
-Navigate to a user profile and take another look at the URL.
-"google.com" is clearly a fixed portion of the URL- it's everywhere! There are other pieces, though, that it wouldn't make sense to hard-code into our application. "NASA", for instance, is the username for one out of millions of users on the site. Managing views for that many users would be impossible! 
+Navigate to a user profile and take another look at the URL. "google.com" is clearly a fixed portion of the URL- it's everywhere! There are other pieces, though, that it wouldn't make sense to hard-code into our application. "NASA", for instance, is the username for one out of millions of users on the site. Managing views for that many users would be impossible! 
 <br />
 Lucky for us, Flask allows us to parameterize different parts of our routes. When we interpolate these into strings or use them to retrieve records from a database, we can create flexible, dynamic applications:
 
@@ -117,7 +117,7 @@ def user(username):
     return f'<h1>Profile for {username}</h1>'
 ```
 
-Anything included in the route passed to the app.route decorator with angle brackets <> surrounding it will be passed to the decorated function as a parameter (in this case username). We can make sure that the username is a valid string, int, float, or path by specifying it in the route.
+Anything included in the route passed to the app.route decorator with angle brackets ```<>``` surrounding it will be passed to the decorated function as a parameter (in this case username). We can make sure that the username is a valid string, int, float, or path by specifying it in the route.
 
 #### Step 5: Testing using Flask
 
@@ -206,9 +206,9 @@ Best Practice Documentation Steps:
 
 * Route Priority
   * Flask uses Werkzeug to handle routing, and it orders routes based on how many variable parts are in the route.
-  * /test has no variable parts, while /<to> does, so it'll try to match /test first, regardless of what order you defined them.
+  * ```/test``` has no variable parts, while ```/<to>``` does, so it'll try to match ```/test``` first, regardless of what order you defined them.
 * Ports
   * A computer has many different ports, most of the time 5555 is an open port so commonly used for backend applications.
 * Default Route
-  * The default route should be considered ‘/’, most api developers will add some route for ‘/’ that will overview their api.
+  * The default route should be considered ```‘/’```, most api developers will add some route for ```‘/’``` that will overview their api.
 
