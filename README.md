@@ -124,6 +124,7 @@ Anything included in the route passed to the app.route decorator with angle brac
 Now that our routes are built we can go ahead and test the application quite easily. We can go ahead and run the following lines in our terminal (make sure we are in our pipenv virtual environment):
 
 ```bash
+cd server
 export FLASK_APP=app.py
 export FLASK_RUN_PORT=5555
 flask run
